@@ -191,19 +191,23 @@
     <Text Include="Releasenote.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdminDlg.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BorrowRecord.h" />
     <ClInclude Include="DBUtil.h" />
     <ClInclude Include="Library(MFC).h" />
     <ClInclude Include="LibraryDlg.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringConvert.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeUtil.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdminDlg.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BorrowRecord.cpp" />
     <ClCompile Include="DBUtil.cpp" />
@@ -216,6 +220,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StringConvert.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="TimeUtil.cpp" />
     <ClCompile Include="User.cpp" />
@@ -233,4 +238,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Library(MFC).rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

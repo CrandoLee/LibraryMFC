@@ -4,7 +4,7 @@
 DBUtil::DBUtil()
 {
 	szUsername = "root";
-	szPswd = "ROOT";
+	szPswd = "root";
 	szHost = "localhost";
 	szDatabase = "library";
 	nPort = 3306;

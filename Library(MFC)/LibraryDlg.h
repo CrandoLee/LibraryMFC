@@ -3,8 +3,12 @@
 //
 
 #pragma once
-
-
+#include "afxwin.h"
+#include "User.h"
+#include "Manager.h"
+#include "DBUtil.h"
+#include "StringConvert.h"
+#include "AdminDlg.h"
 // CLibraryDlg ¶Ô»°¿ò
 class CLibraryDlg : public CDialogEx
 {
@@ -29,4 +33,9 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBtnCancel();
+	afx_msg void OnBtnSubmit();
+	CEdit m_cEditName;
+	CEdit m_cEditPass;
 };

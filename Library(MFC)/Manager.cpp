@@ -173,7 +173,7 @@ bool Manager::DiaplayAllBorrowRecord()
 	{
 		user = m_dbUtil.SelectUserById(vecIter->m_nUserId);
 		m_dbUtil.SelectBookById(vecIter->m_nBookId, book);
-		cout << setiosflags(ios::left) << setw(4) << vecIter->m_nBorrowId << "  " << setw(14) << book.GetBookName() << "  " << setw(6) << user.m_strName << "  " << setw(13) << vecIter->m_tBorrowDate << "  " << setw(13) << vecIter->m_tShouldReturnDate << "  " << setw(13) << vecIter->m_tReturnDate << "  " << setw(3) << vecIter->m_nContinue << endl;
+		//cout << setiosflags(ios::left) << setw(4) << vecIter->m_nBorrowId << "  " << setw(14) << book.GetBookName() << "  " << setw(6) << user.m_strName << "  " << setw(13) << vecIter->m_tBorrowDate << "  " << setw(13) << vecIter->m_tShouldReturnDate << "  " << setw(13) << vecIter->m_tReturnDate << "  " << setw(3) << vecIter->m_nContinue << endl;
 	}
 	cin.get();
 	cin.get();
@@ -219,7 +219,7 @@ bool Manager::DisplayAllUser()
 	cout << "ID     用户名      身份" << endl;
 	for (vecIter = users.begin(); vecIter != users.end(); vecIter++)
 	{
-		cout << setiosflags(ios::left) << setw(6) << vecIter->m_nID << "  " << setw(8) << vecIter->m_strName << "  " << (vecIter->m_nRole == 1 ? "管理员" : "学生") << endl;
+		//cout << setiosflags(ios::left) << setw(6) << vecIter->m_nID << "  " << setw(8) << vecIter->m_strName << "  " << (vecIter->m_nRole == 1 ? "管理员" : "学生") << endl;
 	}
 	cin.get();
 	cin.get();

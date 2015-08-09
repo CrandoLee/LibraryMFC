@@ -56,12 +56,16 @@ CLibraryDlg::CLibraryDlg(CWnd* pParent /*=NULL*/)
 void CLibraryDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT1, m_cEditName);
+	DDX_Control(pDX, IDC_EDIT2, m_cEditPass);
 }
 
 BEGIN_MESSAGE_MAP(CLibraryDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDCANCEL, &CLibraryDlg::OnBtnCancel)
+	ON_BN_CLICKED(IDOK, &CLibraryDlg::OnBtnSubmit)
 END_MESSAGE_MAP()
 
 
@@ -150,3 +154,57 @@ HCURSOR CLibraryDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CLibraryDlg::OnBtnCancel()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CDialogEx::OnCancel();
+}
+
+
+void CLibraryDlg::OnBtnSubmit()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	//AfxMessageBox(_T("sdas"));
+	char chName[32] = { 0 };
+	CString cstrName;
+	m_cEditName.GetWindowText(cstrName);
+	CString cstrPass;
+	m_cEditPass.GetWindowText(cstrPass);
+	DBUtil dbUtil;
+	if (!dbUtil.OpenDB())
+	{
+		MessageBox(_T("错误"), _T("连接数据库失败"), MB_ICONWARNING | MB_OK);
+		return;
+	}
+	StringConvert stringCovert;
+
+	string strName;
+	wstring wstrName = cstrName.GetString();
+ 	stringCovert.WStringToString(wstrName, strName);
+
+	string strPass;
+	wstring wstrPass = cstrPass.GetString();
+	stringCovert.WStringToString(wstrPass, strPass);
+
+ 	User user = dbUtil.ReadUser(strName, strPass);
+
+	if (user.m_nRole == 0)
+	{
+		//登录用户为管理员
+		AdminDlg* adminDlg = new AdminDlg();
+		adminDlg->Create(IDD_ADMINDLG);
+		adminDlg->ShowWindow(true);
+		this->ShowWindow(false);
+	}
+	else if (user.m_nRole == 1)
+	{
+		//登陆用户为普通学生
+	}
+	else
+	{
+		MessageBox(_T("错误"), _T("用户名或密码错误"), MB_ICONWARNING | MB_OK);
+		return;
+	}
+}
