@@ -1,5 +1,5 @@
 #pragma once
-
+#include "AddBookDlg.h"
 
 // AdminDlg ¶Ô»°¿ò
 
@@ -20,4 +20,5 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnCancel();
+	afx_msg void OnAddBook();
 };

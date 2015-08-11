@@ -61,6 +61,9 @@
     <ClInclude Include="StringConvert.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AddBookDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library(MFC).cpp">
@@ -97,6 +100,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="StringConvert.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AddBookDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
