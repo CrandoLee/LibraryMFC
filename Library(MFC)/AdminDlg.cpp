@@ -6,7 +6,6 @@
 #include "AdminDlg.h"
 #include "afxdialogex.h"
 
-
 // AdminDlg 对话框
 
 IMPLEMENT_DYNAMIC(AdminDlg, CDialog)
@@ -30,6 +29,7 @@ void AdminDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(AdminDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON8, &AdminDlg::OnCancel)
 	ON_BN_CLICKED(IDC_BUTTON1, &AdminDlg::OnAddBook)
+	ON_MESSAGE(WM_CHANEG_STATE, &AdminDlg::OnChangeState)
 END_MESSAGE_MAP()
 
 
@@ -47,7 +47,19 @@ void AdminDlg::OnAddBook()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	AddBookDlg* addBoolDlg = new AddBookDlg();
+	addBoolDlg->m_parentHwnd = this->GetSafeHwnd();
 	addBoolDlg->Create(IDD_ADDBOOKDLG);
 	addBoolDlg->ShowWindow(true);
 	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+afx_msg LRESULT  AdminDlg::OnChangeState(WPARAM wParam, LPARAM lParam)
+{
+	if (m_bIsShow == false)
+	{
+		m_bIsShow = true;
+		this->ShowWindow(true);
+	}
+	return true;
 }

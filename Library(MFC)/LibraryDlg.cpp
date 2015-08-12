@@ -195,6 +195,7 @@ void CLibraryDlg::OnBtnSubmit()
 		//登录用户为管理员
 		AdminDlg* adminDlg = new AdminDlg();
 		adminDlg->Create(IDD_ADMINDLG);
+		adminDlg->m_bIsShow = true;
 		adminDlg->ShowWindow(true);
 		this->ShowWindow(false);
 	}

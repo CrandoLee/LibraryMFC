@@ -10,15 +10,16 @@ class AdminDlg : public CDialog
 public:
 	AdminDlg(CWnd* pParent = NULL);   // 标准构造函数
 	virtual ~AdminDlg();
-
+	bool m_bIsShow;
 // 对话框数据
 	enum { IDD = IDD_ADMINDLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
-
+	afx_msg LRESULT  OnChangeState(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnCancel();
 	afx_msg void OnAddBook();
+
 };

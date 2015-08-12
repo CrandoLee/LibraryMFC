@@ -11,10 +11,10 @@ TimeUtil::~TimeUtil()
 
 void TimeUtil::TimeToString(time_t time1, char *szTime)
 {
-	struct tm *tm1 = NULL;
-	localtime_s(tm1,&time1);
+	struct tm tm1;
+	localtime_s(&tm1,&time1);
 	sprintf_s(szTime, 64,"%4.4d-%2.2d-%2.2d",
-		tm1->tm_year + 1900, tm1->tm_mon + 1, tm1->tm_mday);
+		tm1.tm_year + 1900, tm1.tm_mon + 1, tm1.tm_mday);
 }
 
 
