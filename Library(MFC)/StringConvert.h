@@ -7,7 +7,9 @@ class StringConvert
 public:
 	StringConvert();
 	~StringConvert();
-	BOOL StringToWString(string &str, wstring &wstr);
-	BOOL WStringToString(wstring &wstr, string &str);
+	wstring s2ws(const string& s);
+	wstring Ansi2WChar(LPCSTR pszSrc, int nLen);
+	string ws2s(wstring& inputws);
+	string WChar2Ansi(LPCWSTR pwszSrc);
 };
 

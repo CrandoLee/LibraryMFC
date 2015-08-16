@@ -44,8 +44,8 @@ END_MESSAGE_MAP()
 void AddBookDlg::OnCancel()
 {
 	// TODO:  在此添加控件通知处理程序代码
-	::SendMessage(m_parentHwnd,WM_CHANEG_STATE, NULL, NULL);
-	OnOK();
+	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
+	CDialogEx::OnCancel();
 	
 }
 
@@ -75,11 +75,7 @@ void AddBookDlg::OnAddBook()
 	string strISBN;
 	string strPubish;
 	string strNum;
-	m_stringConvert.WStringToString(wstrName, strName);
-	m_stringConvert.WStringToString(wstrAuthor, strAuthor);
-	m_stringConvert.WStringToString(wstrISBN, strISBN);
-	m_stringConvert.WStringToString(wstrPublish, strPubish);
-	m_stringConvert.WStringToString(wstrNumber, strNum);
+	strNum = m_stringConvert.ws2s(wstrNumber);
 
 	char szTime[64] = { 0 };
 	time_t lt;
@@ -89,10 +85,10 @@ void AddBookDlg::OnAddBook()
 
 
 	Book book;
-	book.SetBookName(strName);
-	book.SetAuthor(strAuthor);
-	book.SetISBN(strISBN);
-	book.SetPub(strPubish);
+	book.SetBookName(m_stringConvert.ws2s(wstrName));
+	book.SetAuthor(m_stringConvert.ws2s(wstrAuthor));
+	book.SetISBN(m_stringConvert.ws2s(wstrISBN));
+	book.SetPub(m_stringConvert.ws2s(wstrPublish));
 	book.SetInDate(szTime);
 	book.SetTotalNum(atoi(strNum.c_str()));
 	book.SetLeftNum(atoi(strNum.c_str()));

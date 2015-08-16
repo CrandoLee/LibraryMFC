@@ -1,6 +1,6 @@
 #pragma once
 #include "AddBookDlg.h"
-
+#include "QueryBookDlg.h"
 // AdminDlg ¶Ô»°¿ò
 
 class AdminDlg : public CDialog
@@ -22,4 +22,5 @@ public:
 	afx_msg void OnCancel();
 	afx_msg void OnAddBook();
 
+	afx_msg void OnQueryBook();
 };

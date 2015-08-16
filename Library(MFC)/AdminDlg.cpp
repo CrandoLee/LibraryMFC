@@ -1,6 +1,5 @@
 // AdminDlg.cpp : 实现文件
 //
-
 #include "stdafx.h"
 #include "Library(MFC).h"
 #include "AdminDlg.h"
@@ -30,6 +29,7 @@ BEGIN_MESSAGE_MAP(AdminDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON8, &AdminDlg::OnCancel)
 	ON_BN_CLICKED(IDC_BUTTON1, &AdminDlg::OnAddBook)
 	ON_MESSAGE(WM_CHANEG_STATE, &AdminDlg::OnChangeState)
+	ON_BN_CLICKED(IDC_BUTTON2, &AdminDlg::OnQueryBook)
 END_MESSAGE_MAP()
 
 
@@ -62,4 +62,14 @@ afx_msg LRESULT  AdminDlg::OnChangeState(WPARAM wParam, LPARAM lParam)
 		this->ShowWindow(true);
 	}
 	return true;
+}
+
+void AdminDlg::OnQueryBook()
+{
+	QueryBookDlg * queryBookDlg = new QueryBookDlg();
+	queryBookDlg->m_parentHwnd = this->GetSafeHwnd();
+	queryBookDlg->Create(IDD_QUERYDLG);
+	queryBookDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
 }

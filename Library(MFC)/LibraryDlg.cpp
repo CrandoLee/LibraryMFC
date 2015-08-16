@@ -182,11 +182,11 @@ void CLibraryDlg::OnBtnSubmit()
 
 	string strName;
 	wstring wstrName = cstrName.GetString();
- 	stringCovert.WStringToString(wstrName, strName);
+	strName = stringCovert.ws2s(wstrName);
 
 	string strPass;
 	wstring wstrPass = cstrPass.GetString();
-	stringCovert.WStringToString(wstrPass, strPass);
+	strPass = stringCovert.ws2s(wstrPass);
 
  	User user = dbUtil.ReadUser(strName, strPass);
 

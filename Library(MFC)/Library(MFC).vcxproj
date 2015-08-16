@@ -199,6 +199,7 @@
     <ClInclude Include="Library(MFC).h" />
     <ClInclude Include="LibraryDlg.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="QueryBookDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringConvert.h" />
@@ -216,6 +217,7 @@
     <ClCompile Include="Library(MFC).cpp" />
     <ClCompile Include="LibraryDlg.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="QueryBookDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
