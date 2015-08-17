@@ -33,6 +33,8 @@
 
 #include <afxcontrolbars.h>     // 功能区和控件条的 MFC 支持
 
+#define WM_CHANEG_STATE WM_USER + 100
+
 
 
 

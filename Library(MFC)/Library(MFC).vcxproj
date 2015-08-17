@@ -196,6 +196,7 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="BorrowRecord.h" />
     <ClInclude Include="DBUtil.h" />
+    <ClInclude Include="DeleteBookDlg.h" />
     <ClInclude Include="Library(MFC).h" />
     <ClInclude Include="LibraryDlg.h" />
     <ClInclude Include="Manager.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BorrowRecord.cpp" />
     <ClCompile Include="DBUtil.cpp" />
+    <ClCompile Include="DeleteBookDlg.cpp" />
     <ClCompile Include="Library(MFC).cpp" />
     <ClCompile Include="LibraryDlg.cpp" />
     <ClCompile Include="Manager.cpp" />

@@ -259,6 +259,54 @@ bool DBUtil::SelectBookById(int nBookId, Book &book)
 	return true;
 }
 
+
+//根据作者查询书籍
+bool DBUtil::SelectBookByAuthor(string strBookName, vector<Book> &books)
+{
+	int res;
+	string sql;
+	if (isOpen)
+	{
+		mysql_query(&myCont, "SET NAMES GBK"); //设置编码格式,否则在cmd下无法显示中文
+		sql += "select * from book where author like '%" + strBookName + "%'";
+		res = mysql_query(&myCont, sql.c_str());//查询
+		if (!res)
+		{
+			result = mysql_store_result(&myCont);//保存查询到的数据到result
+			if (result)
+			{
+				while (sql_row = mysql_fetch_row(result))//获取具体的数据
+				{
+					Book book;
+					book.SetBookID(atoi(sql_row[0]));
+					book.SetBookName(sql_row[1]);
+					book.SetAuthor(sql_row[2]);
+					book.SetISBN(sql_row[3]);
+					book.SetPub(sql_row[4]);
+					book.SetInDate(sql_row[5]);
+					book.SetTotalNum(atoi(sql_row[6]));
+					book.SetLeftNum(atoi(sql_row[7]));
+					books.push_back(book);
+				}
+			}
+		}
+		else
+		{
+			cout << "query sql failed!" << endl;
+		}
+	}
+	else
+	{
+		cout << "connect failed!" << endl;
+	}
+	if (result != NULL)
+	{
+		mysql_free_result(result);//释放结果资源
+	}
+	return true;
+}
+
+
 //根据ID删除图书
 bool DBUtil::DeleteBookById(int nBookId)
 {

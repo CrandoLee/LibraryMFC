@@ -41,6 +41,7 @@ END_MESSAGE_MAP()
 
 void QueryBookDlg::OnQuery()
 {
+	m_cListCtrl.DeleteAllItems();
 	vector<Book> books;
 	if (!m_dbUtil.isOpen)
 	{
@@ -61,18 +62,12 @@ void QueryBookDlg::OnQuery()
 	}
 	else if (nIndex == 1)
 	{
-
+		m_dbUtil.SelectBookByAuthor(strBookName, books);
 	}
-	//m_dbUtil.SelectBookByName(strBookName, books);
 	vector<Book>::iterator vecIter;
-	//cout << "ID     书名            作者           出版社       入库日期     馆藏数量   余量" << endl;
 	int i = 0, j = 0;
 	int number = m_cListCtrl.GetItemCount();
 	wstring wstrTemp;
-// 	m_cListCtrl.InsertItem(0, _T("01"));
-// 	m_cListCtrl.SetItemText(0, 0, _T("aaa"));
-// 	m_cListCtrl.SetItemText(0, 1, _T("aaa"));
-// 	m_cListCtrl.SetItemText(0, 2, _T("aaa"));
 	for (vecIter = books.begin(); vecIter != books.end(); vecIter++)
 	{
 		wchar_t chId[4] = { 0 };
@@ -100,7 +95,6 @@ void QueryBookDlg::OnQuery()
 }
 
 
-
 BOOL QueryBookDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
@@ -114,8 +108,8 @@ BOOL QueryBookDlg::OnInitDialog()
 	m_cListCtrl.InsertColumn(2, _T("作者"), LVCFMT_LEFT, 80);
 	m_cListCtrl.InsertColumn(3, _T("ISBN"), LVCFMT_LEFT, 80);
 	m_cListCtrl.InsertColumn(4, _T("出版社"), LVCFMT_LEFT, 80);
-	m_cListCtrl.InsertColumn(5, _T("库存"), LVCFMT_LEFT, 80);
-	m_cListCtrl.InsertColumn(6, _T("余量"), LVCFMT_LEFT,80);
+	m_cListCtrl.InsertColumn(5, _T("库存"), LVCFMT_LEFT, 78);
+	m_cListCtrl.InsertColumn(6, _T("余量"), LVCFMT_LEFT,79);
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常:  OCX 属性页应返回 FALSE
 }

@@ -21,6 +21,7 @@ public:
 	bool AddBook(Book book);
 	bool SelectAllBook(vector<Book> &books);
 	bool SelectBookByName(string strBookName, vector<Book> &books);
+	bool SelectBookByAuthor(string strBookName, vector<Book> &books);
 	bool SelectBookById(int nBookId, Book &book);
 	bool DeleteBookById(int nBookId);
 	bool AddBorrowRecord(BorrowRecord borrowRecord);

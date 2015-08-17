@@ -30,6 +30,7 @@ BEGIN_MESSAGE_MAP(AdminDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON1, &AdminDlg::OnAddBook)
 	ON_MESSAGE(WM_CHANEG_STATE, &AdminDlg::OnChangeState)
 	ON_BN_CLICKED(IDC_BUTTON2, &AdminDlg::OnQueryBook)
+	ON_BN_CLICKED(IDC_BUTTON3, &AdminDlg::OnDeleteBook)
 END_MESSAGE_MAP()
 
 
@@ -70,6 +71,17 @@ void AdminDlg::OnQueryBook()
 	queryBookDlg->m_parentHwnd = this->GetSafeHwnd();
 	queryBookDlg->Create(IDD_QUERYDLG);
 	queryBookDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+
+void AdminDlg::OnDeleteBook()
+{
+	DeleteBookDlg * deleteBookDlg = new DeleteBookDlg();
+	deleteBookDlg->m_parentHwnd = this->GetSafeHwnd();
+	deleteBookDlg->Create(IDD_DELBOOKDLG);
+	deleteBookDlg->ShowWindow(true);
 	this->ShowWindow(false);
 	m_bIsShow = false;
 }
