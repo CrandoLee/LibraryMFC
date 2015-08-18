@@ -205,7 +205,7 @@ void CLibraryDlg::OnBtnSubmit()
 	}
 	else
 	{
-		MessageBox(_T("错误"), _T("用户名或密码错误"), MB_ICONWARNING | MB_OK);
+		MessageBox(_T("用户名或密码错误"), _T("错误"), MB_ICONWARNING | MB_OK);
 		return;
 	}
 }

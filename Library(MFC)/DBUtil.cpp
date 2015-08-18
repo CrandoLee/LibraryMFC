@@ -327,11 +327,13 @@ bool DBUtil::DeleteBookById(int nBookId)
 		else
 		{
 			cout << "query sql failed!" << endl;
+			return false;
 		}
 	}
 	else
 	{
 		cout << "connect failed!" << endl;
+		return false;
 	}
 
 	return true;
