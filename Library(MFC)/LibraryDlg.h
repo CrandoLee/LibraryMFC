@@ -9,6 +9,7 @@
 #include "DBUtil.h"
 #include "StringConvert.h"
 #include "AdminDlg.h"
+#include "StuDlg.h"
 // CLibraryDlg ¶Ô»°¿ò
 class CLibraryDlg : public CDialogEx
 {

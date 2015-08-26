@@ -70,6 +70,12 @@
     <ClInclude Include="DeleteBookDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="StuDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BookListDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library(MFC).cpp">
@@ -115,6 +121,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DeleteBookDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StuDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BookListDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -31,6 +31,7 @@ BEGIN_MESSAGE_MAP(AdminDlg, CDialog)
 	ON_MESSAGE(WM_CHANEG_STATE, &AdminDlg::OnChangeState)
 	ON_BN_CLICKED(IDC_BUTTON2, &AdminDlg::OnQueryBook)
 	ON_BN_CLICKED(IDC_BUTTON3, &AdminDlg::OnDeleteBook)
+	ON_BN_CLICKED(IDC_BUTTON4, &AdminDlg::OnShowBookList)
 END_MESSAGE_MAP()
 
 
@@ -84,4 +85,15 @@ void AdminDlg::OnDeleteBook()
 	deleteBookDlg->ShowWindow(true);
 	this->ShowWindow(false);
 	m_bIsShow = false;
+}
+
+
+void AdminDlg::OnShowBookList()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	BookListDlg *bookListDlg = new BookListDlg();
+	bookListDlg->m_parentHwnd = this->GetSafeHwnd();
+	bookListDlg->Create(IDD_BOOKLISTDLG);
+	bookListDlg->ShowWindow(true);
+	this->ShowWindow(false);
 }

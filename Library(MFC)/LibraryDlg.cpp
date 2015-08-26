@@ -202,6 +202,11 @@ void CLibraryDlg::OnBtnSubmit()
 	else if (user.m_nRole == 1)
 	{
 		//登陆用户为普通学生
+		StuDlg* stuDlg = new StuDlg();
+		stuDlg->Create(IDD_STUDLG);
+		stuDlg->m_bIsShow = true;
+		stuDlg->ShowWindow(true);
+		this->ShowWindow(false);
 	}
 	else
 	{
