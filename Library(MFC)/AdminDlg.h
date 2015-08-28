@@ -3,6 +3,7 @@
 #include "QueryBookDlg.h"
 #include "DeleteBookDlg.h"
 #include "BookListDlg.h"
+#include "AddUserDlg.h"
 // AdminDlg ¶Ô»°¿ò
 
 class AdminDlg : public CDialog
@@ -27,4 +28,5 @@ public:
 	afx_msg void OnQueryBook();
 	afx_msg void OnDeleteBook();
 	afx_msg void OnShowBookList();
+	afx_msg void OnAddUser();
 };

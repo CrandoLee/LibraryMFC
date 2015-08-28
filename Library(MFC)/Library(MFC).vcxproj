@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddBookDlg.h" />
+    <ClInclude Include="AddUserDlg.h" />
     <ClInclude Include="AdminDlg.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookListDlg.h" />
@@ -213,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddBookDlg.cpp" />
+    <ClCompile Include="AddUserDlg.cpp" />
     <ClCompile Include="AdminDlg.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BookListDlg.cpp" />

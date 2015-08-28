@@ -38,7 +38,7 @@ END_MESSAGE_MAP()
 void BookListDlg::OnCancel()
 {
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
-	exit(0);
+	CDialogEx::OnCancel();
 }
 
 

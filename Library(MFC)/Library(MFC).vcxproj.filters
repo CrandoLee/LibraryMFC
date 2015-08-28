@@ -76,6 +76,9 @@
     <ClInclude Include="BookListDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AddUserDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library(MFC).cpp">
@@ -127,6 +130,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BookListDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AddUserDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
