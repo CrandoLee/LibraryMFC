@@ -33,6 +33,7 @@ BEGIN_MESSAGE_MAP(AdminDlg, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON3, &AdminDlg::OnDeleteBook)
 	ON_BN_CLICKED(IDC_BUTTON4, &AdminDlg::OnShowBookList)
 	ON_BN_CLICKED(IDC_BUTTON6, &AdminDlg::OnAddUser)
+	ON_BN_CLICKED(IDC_BUTTON7, &AdminDlg::OnShowUserList)
 END_MESSAGE_MAP()
 
 
@@ -107,6 +108,17 @@ void AdminDlg::OnAddUser()
 	addUserDlg->m_parentHwnd = this->GetSafeHwnd();
 	addUserDlg->Create(IDD_ADDUSERDLG);
 	addUserDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+
+void AdminDlg::OnShowUserList()
+{
+	UserListDlg *userListDlg = new UserListDlg();
+	userListDlg->m_parentHwnd = this->GetSafeHwnd();
+	userListDlg->Create(IDD_USERLISTDLG);
+	userListDlg->ShowWindow(true);
 	this->ShowWindow(false);
 	m_bIsShow = false;
 }

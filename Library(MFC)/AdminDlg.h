@@ -4,6 +4,7 @@
 #include "DeleteBookDlg.h"
 #include "BookListDlg.h"
 #include "AddUserDlg.h"
+#include "UserListDlg.h"
 // AdminDlg ¶Ô»°¿ò
 
 class AdminDlg : public CDialog
@@ -24,9 +25,9 @@ protected:
 public:
 	afx_msg void OnCancel();
 	afx_msg void OnAddBook();
-
 	afx_msg void OnQueryBook();
 	afx_msg void OnDeleteBook();
 	afx_msg void OnShowBookList();
 	afx_msg void OnAddUser();
+	afx_msg void OnShowUserList();
 };

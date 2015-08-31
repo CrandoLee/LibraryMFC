@@ -211,6 +211,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeUtil.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="UserListDlg.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddBookDlg.cpp" />
@@ -236,6 +237,7 @@
     <ClCompile Include="StuDlg.cpp" />
     <ClCompile Include="TimeUtil.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserListDlg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Library(MFC).rc" />
