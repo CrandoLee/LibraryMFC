@@ -82,6 +82,9 @@
     <ClInclude Include="UserListDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BorrowBookDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library(MFC).cpp">
@@ -139,6 +142,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="UserListDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BorrowBookDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

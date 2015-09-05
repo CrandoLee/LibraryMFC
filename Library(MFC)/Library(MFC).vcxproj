@@ -196,6 +196,7 @@
     <ClInclude Include="AdminDlg.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookListDlg.h" />
+    <ClInclude Include="BorrowBookDlg.h" />
     <ClInclude Include="BorrowRecord.h" />
     <ClInclude Include="DBUtil.h" />
     <ClInclude Include="DeleteBookDlg.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="AdminDlg.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BookListDlg.cpp" />
+    <ClCompile Include="BorrowBookDlg.cpp" />
     <ClCompile Include="BorrowRecord.cpp" />
     <ClCompile Include="DBUtil.cpp" />
     <ClCompile Include="DeleteBookDlg.cpp" />

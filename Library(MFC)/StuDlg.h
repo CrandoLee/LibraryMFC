@@ -1,5 +1,6 @@
 #pragma once
-
+#include "QueryBookDlg.h"
+#include "BorrowBookDlg.h"
 
 // StuDlg 对话框
 
@@ -16,9 +17,11 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
-
+	afx_msg LRESULT  OnChangeState(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 	virtual void OnCancel();
 public:
 	afx_msg void OnLogout();
+	afx_msg void OnQueryBook();
+	afx_msg void OnBorrowBook();
 };
