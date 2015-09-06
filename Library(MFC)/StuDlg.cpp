@@ -76,6 +76,7 @@ void StuDlg::OnBorrowBook()
 {
 	BorrowBookDlg *borrowBookDlg = new BorrowBookDlg();
 	borrowBookDlg->m_parentHwnd = this->GetSafeHwnd();
+	borrowBookDlg->m_user = m_user;
 	borrowBookDlg->Create(IDD_BORROWDLG);
 	borrowBookDlg->ShowWindow(true);
 	this->ShowWindow(false);

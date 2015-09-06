@@ -41,7 +41,7 @@ time_t TimeUtil::StringToTime(char * szTime)
 string TimeUtil::AddMonth(time_t &tTime)
 {
 	struct tm *structTime = NULL;
-	localtime_s(structTime,&tTime);
+	structTime = localtime(&tTime);
 	switch (structTime->tm_mon + 1)
 	{
 	case 1:

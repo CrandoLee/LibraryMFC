@@ -69,7 +69,7 @@ void BorrowBookDlg::OnQuery()
 	int i = 0, j = 0;
 	int number = m_cListCtrlResult.GetItemCount();
 	wstring wstrTemp;
-	for (vecIter = m_books.begin(); vecIter != books.end(); vecIter++)
+	for (vecIter = m_books.begin(); vecIter != m_books.end(); vecIter++)
 	{
 		wchar_t chId[4] = { 0 };
 		wsprintf(chId, _T("%d"), vecIter->GetBookID());
@@ -103,6 +103,7 @@ void BorrowBookDlg::OnBorrow()
 	string strID = m_stringConvert.ws2s(wstrID);
 	Book book;
 	vector<Book>::iterator iterVec;
+	m_dbUtil.OpenDB();
 	for (iterVec = m_books.begin(); iterVec != m_books.end(); iterVec++)
 	{
 		if (iterVec->GetBookID() == atoi(strID.c_str()))
@@ -114,9 +115,28 @@ void BorrowBookDlg::OnBorrow()
 			}
 			else
 			{
-				m_dbUtil.
+				BorrowRecord borrowRecord;
+				borrowRecord.m_nBookId = iterVec->GetBookID();
+				borrowRecord.m_nUserId = m_user.m_nID;
+				time_t tTemp = time(NULL);
+				char szTime[16] = { 0 };
+				m_timeUtil.TimeToString(tTemp, szTime);
+				borrowRecord.m_tBorrowDate = szTime;
+				borrowRecord.m_tShouldReturnDate = m_timeUtil.AddMonth(tTemp);
+				borrowRecord.m_tReturnDate = "";
+				borrowRecord.m_nContinue = 0;
+				if (m_dbUtil.AddBorrowRecord(borrowRecord))
+				{
+					MessageBox(L"借阅成功");
+				}
+				return;
 			}
 		}
+
+	}
+	if (iterVec == m_books.end())
+	{
+		MessageBox(L"请选择查询结果的图书ID");
 	}
 }
 

@@ -5,6 +5,7 @@
 #include "Book.h"
 #include "DBUtil.h"
 #include "StringConvert.h"
+#include "TimeUtil.h"
 using namespace std;
 // BorrowBookDlg 对话框
 
@@ -20,6 +21,8 @@ public:
 	DBUtil m_dbUtil;
 	StringConvert m_stringConvert;
 	vector<Book> m_books;
+	User m_user;
+	TimeUtil m_timeUtil;
 // 对话框数据
 	enum { IDD = IDD_BORROWDLG };
 

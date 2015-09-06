@@ -116,6 +116,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>E:\Program Files\MySQL\MySQL Server 5.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions> /D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -198,6 +199,7 @@
     <ClInclude Include="BookListDlg.h" />
     <ClInclude Include="BorrowBookDlg.h" />
     <ClInclude Include="BorrowRecord.h" />
+    <ClInclude Include="BorrowRecordDlg.h" />
     <ClInclude Include="DBUtil.h" />
     <ClInclude Include="DeleteBookDlg.h" />
     <ClInclude Include="Library(MFC).h" />
@@ -222,6 +224,7 @@
     <ClCompile Include="BookListDlg.cpp" />
     <ClCompile Include="BorrowBookDlg.cpp" />
     <ClCompile Include="BorrowRecord.cpp" />
+    <ClCompile Include="BorrowRecordDlg.cpp" />
     <ClCompile Include="DBUtil.cpp" />
     <ClCompile Include="DeleteBookDlg.cpp" />
     <ClCompile Include="Library(MFC).cpp" />

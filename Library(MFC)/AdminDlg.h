@@ -5,6 +5,7 @@
 #include "BookListDlg.h"
 #include "AddUserDlg.h"
 #include "UserListDlg.h"
+#include "BorrowRecordDlg.h"
 // AdminDlg ¶Ô»°¿ò
 
 class AdminDlg : public CDialog
@@ -30,4 +31,5 @@ public:
 	afx_msg void OnShowBookList();
 	afx_msg void OnAddUser();
 	afx_msg void OnShowUserList();
+	afx_msg void OnBorrowRecord();
 };

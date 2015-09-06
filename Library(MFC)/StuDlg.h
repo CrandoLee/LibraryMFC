@@ -1,7 +1,7 @@
 #pragma once
 #include "QueryBookDlg.h"
 #include "BorrowBookDlg.h"
-
+#include "User.h"
 // StuDlg 对话框
 
 class StuDlg : public CDialogEx
@@ -12,6 +12,7 @@ public:
 	StuDlg(CWnd* pParent = NULL);   // 标准构造函数
 	virtual ~StuDlg();
 	bool m_bIsShow;
+	User m_user;
 // 对话框数据
 	enum { IDD = IDD_STUDLG };
 

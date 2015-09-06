@@ -205,7 +205,8 @@ void CLibraryDlg::OnBtnSubmit()
 		StuDlg* stuDlg = new StuDlg();
 		stuDlg->Create(IDD_STUDLG);
 		stuDlg->m_bIsShow = true;
-		stuDlg->ShowWindow(true);
+		stuDlg->m_user = user;
+		stuDlg->ShowWindow(true);	
 		this->ShowWindow(false);
 	}
 	else
