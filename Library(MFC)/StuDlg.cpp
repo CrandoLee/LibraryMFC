@@ -32,6 +32,8 @@ BEGIN_MESSAGE_MAP(StuDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &StuDlg::OnQueryBook)
 	ON_BN_CLICKED(IDC_BUTTON2, &StuDlg::OnBorrowBook)
 	ON_MESSAGE(WM_CHANEG_STATE,&StuDlg::OnChangeState)
+	ON_BN_CLICKED(IDC_BUTTON4, &StuDlg::OnQueryMyBorrowRecord)
+	ON_BN_CLICKED(IDC_BUTTON3, &StuDlg::OnReturnBook)
 END_MESSAGE_MAP()
 
 
@@ -79,6 +81,30 @@ void StuDlg::OnBorrowBook()
 	borrowBookDlg->m_user = m_user;
 	borrowBookDlg->Create(IDD_BORROWDLG);
 	borrowBookDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+
+void StuDlg::OnQueryMyBorrowRecord()
+{
+	BorrowRecordDlg *borrowRecordDlg = new BorrowRecordDlg();
+	borrowRecordDlg->m_parentHwnd = this->GetSafeHwnd();
+	borrowRecordDlg->Create(IDD_BORROWRECORDDLG);
+	borrowRecordDlg->m_nStuID = m_user.m_nID;
+	borrowRecordDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+
+void StuDlg::OnReturnBook()
+{
+	ReturnBookDlg *returnBookDlg = new ReturnBookDlg();
+	returnBookDlg->m_parentHwnd = this->GetSafeHwnd();
+	returnBookDlg->m_user = m_user;
+	returnBookDlg->Create(IDD_RETURNBOOKDLG);
+	returnBookDlg->ShowWindow(true);
 	this->ShowWindow(false);
 	m_bIsShow = false;
 }

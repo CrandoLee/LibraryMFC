@@ -16,9 +16,10 @@ class BorrowRecordDlg : public CDialogEx
 public:
 	BorrowRecordDlg(CWnd* pParent = NULL);   // 标准构造函数
 	virtual ~BorrowRecordDlg();
-	HWND m_parentHwnd;
-	DBUtil m_dbUtil;
-	StringConvert m_stringConvert;
+	HWND			m_parentHwnd;
+	DBUtil			m_dbUtil;
+	StringConvert	m_stringConvert;
+	int				m_nStuID;
 // 对话框数据
 	enum { IDD = IDD_BORROWRECORDDLG };
 

@@ -46,7 +46,7 @@ void BorrowRecordDlg::OnCancel()
 BOOL BorrowRecordDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	m_nStuID = 0;
 	
 	m_cListCtrl.InsertColumn(0, _T("±‡∫≈"), LVCFMT_LEFT, 60);
 	m_cListCtrl.InsertColumn(1, _T(" È√˚"), LVCFMT_LEFT, 100);
@@ -61,8 +61,15 @@ BOOL BorrowRecordDlg::OnInitDialog()
 	{
 		m_dbUtil.OpenDB();
 	}
-
-	m_dbUtil.SelectAllBorrowRecord(borrowRecords);
+	if (m_nStuID != 0)
+	{
+		m_dbUtil.SelectBorrowRecordByUserId(borrowRecords,m_nStuID, 2);
+	}
+	else
+	{
+		m_dbUtil.SelectAllBorrowRecord(borrowRecords);
+	}
+	
 	User user;
 	Book book;
 	vector<BorrowRecord>::iterator vecIter;
