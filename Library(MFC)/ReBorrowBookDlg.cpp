@@ -1,27 +1,27 @@
-// ReturnBookDlg.cpp : 实现文件
+// ReBorrowBookDlg.cpp : 实现文件
 //
 
 #include "stdafx.h"
 #include "Library(MFC).h"
-#include "ReturnBookDlg.h"
+#include "ReBorrowBookDlg.h"
 #include "afxdialogex.h"
 
 
-// ReturnBookDlg 对话框
+// ReBorrowBookDlg 对话框
 
-IMPLEMENT_DYNAMIC(ReturnBookDlg, CDialogEx)
+IMPLEMENT_DYNAMIC(ReBorrowBookDlg, CDialogEx)
 
-ReturnBookDlg::ReturnBookDlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(ReturnBookDlg::IDD, pParent)
+ReBorrowBookDlg::ReBorrowBookDlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(ReBorrowBookDlg::IDD, pParent)
 {
 
 }
 
-ReturnBookDlg::~ReturnBookDlg()
+ReBorrowBookDlg::~ReBorrowBookDlg()
 {
 }
 
-void ReturnBookDlg::DoDataExchange(CDataExchange* pDX)
+void ReBorrowBookDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_LIST1, m_cListCtrl);
@@ -29,15 +29,15 @@ void ReturnBookDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 
-BEGIN_MESSAGE_MAP(ReturnBookDlg, CDialogEx)
-	ON_BN_CLICKED(IDC_BUTTON1, &ReturnBookDlg::OnReturnBook)
+BEGIN_MESSAGE_MAP(ReBorrowBookDlg, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON1, &ReBorrowBookDlg::OnReborrow)
 END_MESSAGE_MAP()
 
 
-// ReturnBookDlg 消息处理程序
+// ReBorrowBookDlg 消息处理程序
 
 
-void ReturnBookDlg::OnReturnBook()
+void ReBorrowBookDlg::OnReborrow()
 {
 	CString cstrBookId;
 	m_cEditID.GetWindowText(cstrBookId);
@@ -61,10 +61,10 @@ void ReturnBookDlg::OnReturnBook()
 		MessageBox(L"您所输入的ID不在记录中，请重新输入");
 		return;
 	}
-	
-	if (m_dbUtil.FinishBorrowRecord(vecIter->m_nBorrowId, vecIter->m_nBookId))
+
+	if (m_dbUtil.ExtendBorrowRecord(vecIter->m_nBorrowId))
 	{
-		MessageBox(L"归还成功");
+		MessageBox(L"续借成功");
 
 		m_cListCtrl.DeleteAllItems();
 		m_vecBorrowRecords.empty();
@@ -92,13 +92,10 @@ void ReturnBookDlg::OnReturnBook()
 			i++;
 		}
 	}
-
-
-	
 }
 
 
-BOOL ReturnBookDlg::OnInitDialog()
+BOOL ReBorrowBookDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
@@ -137,12 +134,11 @@ BOOL ReturnBookDlg::OnInitDialog()
 		i++;
 	}
 
-	return TRUE;  
-
+	return TRUE;
 }
 
 
-void ReturnBookDlg::OnCancel()
+void ReBorrowBookDlg::OnCancel()
 {
 	// TODO:  在此添加专用代码和/或调用基类
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
@@ -150,7 +146,7 @@ void ReturnBookDlg::OnCancel()
 }
 
 
-void ReturnBookDlg::OnOK()
+void ReBorrowBookDlg::OnOK()
 {
 
 }

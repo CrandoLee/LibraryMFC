@@ -105,3 +105,9 @@ void AddUserDlg::OnSaveUser()
 	m_dbUtil.AddUser(user);
 	MessageBox(L"用户添加成功");
 }
+
+
+void AddUserDlg::OnOK()
+{
+
+}

@@ -121,3 +121,9 @@ void QueryBookDlg::OnCancel()
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
 	CDialogEx::OnCancel();
 }
+
+
+void QueryBookDlg::OnOK()
+{
+
+}

@@ -167,3 +167,9 @@ void BorrowBookDlg::OnCancel()
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
 	CDialogEx::OnCancel();
 }
+
+
+void BorrowBookDlg::OnOK()
+{
+
+}

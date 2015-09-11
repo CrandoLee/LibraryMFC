@@ -102,3 +102,9 @@ void AddBookDlg::OnAddBook()
 	OnOK();
 	DestroyWindow();
 }
+
+
+void AddBookDlg::OnOK()
+{
+
+}

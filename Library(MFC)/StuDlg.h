@@ -4,6 +4,7 @@
 #include "User.h"
 #include "BorrowRecordDlg.h"
 #include "ReturnBookDlg.h"
+#include "ReBorrowBookDlg.h"
 // StuDlg ¶Ô»°¿ò
 
 class StuDlg : public CDialogEx
@@ -29,4 +30,5 @@ public:
 	afx_msg void OnBorrowBook();
 	afx_msg void OnQueryMyBorrowRecord();
 	afx_msg void OnReturnBook();
+	afx_msg void OnReborrowBook();
 };

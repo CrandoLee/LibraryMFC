@@ -34,6 +34,7 @@ BEGIN_MESSAGE_MAP(StuDlg, CDialogEx)
 	ON_MESSAGE(WM_CHANEG_STATE,&StuDlg::OnChangeState)
 	ON_BN_CLICKED(IDC_BUTTON4, &StuDlg::OnQueryMyBorrowRecord)
 	ON_BN_CLICKED(IDC_BUTTON3, &StuDlg::OnReturnBook)
+	ON_BN_CLICKED(IDC_BUTTON5, &StuDlg::OnReborrowBook)
 END_MESSAGE_MAP()
 
 
@@ -105,6 +106,18 @@ void StuDlg::OnReturnBook()
 	returnBookDlg->m_user = m_user;
 	returnBookDlg->Create(IDD_RETURNBOOKDLG);
 	returnBookDlg->ShowWindow(true);
+	this->ShowWindow(false);
+	m_bIsShow = false;
+}
+
+
+void StuDlg::OnReborrowBook()
+{
+	ReBorrowBookDlg *reBorrowBookDlg = new ReBorrowBookDlg();
+	reBorrowBookDlg->m_parentHwnd = this->GetSafeHwnd();
+	reBorrowBookDlg->m_user = m_user;
+	reBorrowBookDlg->Create(IDD_REBORROWBOOKDLG);
+	reBorrowBookDlg->ShowWindow(true);
 	this->ShowWindow(false);
 	m_bIsShow = false;
 }

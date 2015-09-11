@@ -39,4 +39,5 @@ public:
 	afx_msg void OnBorrow();
 	virtual BOOL OnInitDialog();
 	virtual void OnCancel();
+	virtual void OnOK();
 };

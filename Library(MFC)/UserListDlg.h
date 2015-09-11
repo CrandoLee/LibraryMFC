@@ -27,4 +27,5 @@ public:
 	virtual BOOL OnInitDialog();
 	virtual void OnCancel();
 	CListCtrl m_cListUser;
+	virtual void OnOK();
 };

@@ -133,3 +133,9 @@ void DeleteBookDlg::OnCancel()
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
 	CDialogEx::OnCancel();
 }
+
+
+void DeleteBookDlg::OnOK()
+{
+
+}

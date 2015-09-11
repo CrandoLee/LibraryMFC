@@ -30,4 +30,5 @@ public:
 	afx_msg void OnDelete();
 	virtual BOOL OnInitDialog();
 	virtual void OnCancel();
+	virtual void OnOK();
 };

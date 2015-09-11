@@ -31,4 +31,5 @@ public:
 	CEdit m_cEditPassword;
 	CComboBox m_cCombType;
 	afx_msg void OnSaveUser();
+	virtual void OnOK();
 };

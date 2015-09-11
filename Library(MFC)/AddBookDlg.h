@@ -30,4 +30,5 @@ public:
 	CEdit m_cEditISBN;
 	CEdit m_cEditPublish;
 	CEdit m_cEditNumber;
+	virtual void OnOK();
 };

@@ -34,4 +34,5 @@ public:
 	CEdit m_cEditName;
 	CListCtrl m_cListCtrl;
 	virtual void OnCancel();
+	virtual void OnOK();
 };

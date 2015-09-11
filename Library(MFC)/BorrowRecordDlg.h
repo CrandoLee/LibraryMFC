@@ -31,4 +31,5 @@ protected:
 public:
 	virtual BOOL OnInitDialog();
 	CListCtrl m_cListCtrl;
+	virtual void OnOK();
 };

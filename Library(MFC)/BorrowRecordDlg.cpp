@@ -106,3 +106,9 @@ BOOL BorrowRecordDlg::OnInitDialog()
 	return TRUE;  
 
 }
+
+
+void BorrowRecordDlg::OnOK()
+{
+
+}

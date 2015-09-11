@@ -82,3 +82,9 @@ void UserListDlg::OnCancel()
 	::SendMessage(m_parentHwnd, WM_CHANEG_STATE, NULL, NULL);
 	CDialogEx::OnCancel();
 }
+
+
+void UserListDlg::OnOK()
+{
+
+}
