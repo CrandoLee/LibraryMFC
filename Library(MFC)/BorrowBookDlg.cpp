@@ -43,7 +43,7 @@ END_MESSAGE_MAP()
 void BorrowBookDlg::OnQuery()
 {
 	m_cListCtrlResult.DeleteAllItems();
-	m_books.empty();
+	m_books.clear();
 	if (!m_dbUtil.isOpen)
 	{
 		m_dbUtil.OpenDB();

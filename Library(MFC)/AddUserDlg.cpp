@@ -56,9 +56,9 @@ void AddUserDlg::OnBtnCancel()
 BOOL AddUserDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	m_cCombType.SetWindowText(L"学生");
 	m_cCombType.AddString(L"学生");
 	m_cCombType.AddString(L"管理员");
+	m_cCombType.SetCurSel(0);
 	return TRUE;
 }
 
